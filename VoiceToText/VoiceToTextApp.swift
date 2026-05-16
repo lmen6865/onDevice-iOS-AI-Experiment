@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct VoiceToTextApp: App {
@@ -13,5 +14,10 @@ struct VoiceToTextApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(
+            for: Recording.self,
+            inMemory: true,
+            isAutosaveEnabled: true
+        )
     }
 }
